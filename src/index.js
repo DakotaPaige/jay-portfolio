@@ -4,6 +4,7 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import * as serviceWorker from './serviceWorker';
 import { ThemeProvider } from 'styled-components';
+import {  QueryClientProvider, QueryClient } from 'react-query';
 
 import App from './App';
 import ScrollTop from 'src/plugins/ScrollTop';
@@ -15,7 +16,10 @@ import theme from 'src/styles/theme';
 import GlobalStyle from 'src/styles/global';
 import './styles/global.css';
 
+const queryClient = new QueryClient()
+
 ReactDOM.render(
+  <QueryClientProvider client={queryClient}>
   <ThemeProvider theme={theme}>
     <Provider store={store}>
       <Router>
@@ -28,7 +32,8 @@ ReactDOM.render(
         </>
       </Router>
     </Provider>
-  </ThemeProvider>,
+  </ThemeProvider>
+  </QueryClientProvider>,
   document.getElementById('app')
 );
 

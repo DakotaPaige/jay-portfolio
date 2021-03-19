@@ -1,18 +1,18 @@
 module.exports = {
   prerender: true,
   analytics: {
-    gtmId: ''
+    gtmId: '',
   },
   seo: {
-    title: ''
+    title: 'JaypegsPhoto',
   },
   stage: {
     mobile: 320,
     tablet: 768,
-    desktop: 1440
+    desktop: 1440,
   },
   mediaQuery: {
     tablet: 576,
-    desktop: 992
-  }
+    desktop: 992,
+  },
 };

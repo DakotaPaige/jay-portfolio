@@ -3,10 +3,6 @@ const routes = [
     path: '/',
     component: 'pages/Home'
   },
-  {
-    path: '/about',
-    component: 'pages/About'
-  }
 ];
 
 const generateRoutes = function() {

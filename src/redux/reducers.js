@@ -3,9 +3,11 @@ import { createResponsiveStateReducer } from 'redux-responsive';
 
 import appConfig from 'src/config/app.conf';
 import counter from './counter';
+import photos from './photos';
 
 const reducer = combineReducers({
   counter,
+  photos,
   browser: createResponsiveStateReducer(
     {
       mobile: appConfig.mediaQuery.tablet,

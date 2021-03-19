@@ -6,7 +6,7 @@ import { hot } from 'react-hot-loader';
 
 import routes from 'src/routes';
 
-import Header from 'components/Header';
+import Header from 'components/Header/Header';
 
 const App = () => {
   const generateRoutes = () => {

@@ -5,6 +5,7 @@ import theme from './theme';
 export default createGlobalStyle`
   body {
     font-family: ${theme.font.family};
+    background-color: ${theme.color.lightGrey};
   }
 
   a,
