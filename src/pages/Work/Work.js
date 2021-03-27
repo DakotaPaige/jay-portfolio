@@ -1,29 +1,25 @@
 import React from 'react';
 import styled from 'styled-components';
 import { useSelector } from 'react-redux';
+import { useParams } from 'react-router-dom';
 
 import Page from 'components/Page';
+import Gallery from 'components/Gallery/Gallery'; 
 
-// https://jaypegsphoto.ca/wp/wp-json/wp/v2/photos?_embed
+const Work = () => {
 
-const Home = () => {
   const photos = useSelector(state => state.photos.categories);
-
-  console.log(photos);
+  const { id } = useParams();
 
   return (
     <Page>
       <Root>
-        <h1>Home</h1>
+        {Object.keys(photos).length > 0 && <Gallery data={photos[id.toLowerCase()]}/>}
       </Root>
     </Page>
   );
 };
 
-const Root = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`;
+const Root = styled.div``;
 
-export default Home;
+export default Work;

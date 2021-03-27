@@ -9,7 +9,7 @@ export const addPhotos = (photos) => ({
 
 // Initial State
 const initialState = {
-  photos: {}
+  categories: {}
 };
 
 // Reducer
@@ -18,7 +18,7 @@ export default (state = initialState, action = {}) => {
     case PHOTOS__ADD:
       return {
         ...state,
-        photos: { ...action.photos }
+        categories: { ...action.photos }
       };
     default:
       return state;

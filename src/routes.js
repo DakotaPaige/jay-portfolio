@@ -3,6 +3,18 @@ const routes = [
     path: '/',
     component: 'pages/Home'
   },
+  {
+    path: '/work/:id',
+    component: 'pages/Work/Work'
+  },
+  {
+    path: '/contact',
+    component: 'pages/Contact/Contact'
+  },
+  {
+    path: '/about',
+    component: 'pages/About/About'
+  },
 ];
 
 const generateRoutes = function() {

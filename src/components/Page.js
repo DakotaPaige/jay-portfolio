@@ -1,14 +1,15 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const About = () => {
+const Page = (props) => {
+  const { children } = props;
   return (
     <Root>
-      <h1>About</h1>
+      {children}
     </Root>
   );
 };
 
 const Root = styled.main``;
 
-export default About;
+export default Page;

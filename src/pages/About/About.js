@@ -3,11 +3,11 @@ import styled from 'styled-components';
 
 import Page from 'components/Page';
 
-const NotFound = () => {
+const About = () => {
   return (
     <Page>
       <Root>
-        <h1>NotFound</h1>
+        <h1>About</h1>
       </Root>
     </Page>
   );
@@ -15,4 +15,4 @@ const NotFound = () => {
 
 const Root = styled.div``;
 
-export default NotFound;
+export default About;
