@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import Masonry from 'react-masonry-component';
+import { useSwipeable } from 'react-swipeable';
 
 import Container from 'components/Container';
 import Popup from './elements/Popup';
@@ -14,6 +15,52 @@ const Gallery = (props) => {
 
   const [isPopupOpen, setIsPopupOpen] = useState(false);
   const [activeImage, setActiveImage] = useState(0);
+
+  const swiping = useSwipeable({
+    onSwipedLeft: (e) => handleSwipe(e),
+    onSwipedRight: (e) => handleSwipe(e),
+  });
+
+  const handleNext = useCallback(() => {
+    if (activeImage === data.length - 1) {
+      setActiveImage(0);
+    } else {
+      setActiveImage(activeImage + 1);
+    }
+  }, [activeImage, data.length]);
+
+  const handlePrev = useCallback(() => {
+    if (activeImage === 0) {
+      setActiveImage(data.length - 1);
+    } else {
+      setActiveImage(activeImage - 1);
+    }
+  }, [activeImage, data.length]);
+
+  const handleArrowClick = useCallback((e) => {
+    if (e.key.toLowerCase() === 'arrowright' && isPopupOpen) {
+      handleNext();
+    } else if (e.key.toLowerCase() === 'arrowleft' && isPopupOpen) {
+      handlePrev();
+    }
+  }, [handleNext, handlePrev, isPopupOpen]);
+
+  useEffect(() => {
+    document.addEventListener('keydown', handleArrowClick);
+    return () => {
+      document.removeEventListener('keydown', handleArrowClick);
+    };
+  }, [handleArrowClick]);
+
+  const handleSwipe = (e) => {
+    if (isPopupOpen) {
+      if (e.dir.toLowerCase() === 'right') {
+        handleNext();
+      } else {
+        handlePrev();
+      }
+    }
+  };
 
   const handleClose = () => {
     setIsPopupOpen(false);
@@ -39,6 +86,9 @@ const Gallery = (props) => {
           handleClose={handleClose} 
           data={data} 
           activeImage={activeImage}
+          swiper={swiping}
+          handlePrev={handlePrev}
+          handleNext={handleNext}
         />
       </Root>
     </Container>

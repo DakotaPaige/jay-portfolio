@@ -13,6 +13,7 @@ import { categorySort } from 'src/utils/functions';
 import routes from 'src/routes';
 
 import Header from 'components/Header/Header';
+import Loading from 'components/Loading';
 
 const App = () => {
   const generateRoutes = () => {
@@ -40,6 +41,7 @@ const App = () => {
     <Route
       render={({ location }) => (
         <Root>
+          <Loading isLoading={isLoading}/>
           <Header />
           <TransitionGroup>
             <CSSTransition key={location.key} timeout={500} classNames="fade">

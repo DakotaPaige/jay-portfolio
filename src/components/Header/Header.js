@@ -5,6 +5,7 @@ import { useSelector } from 'react-redux';
 import TopBar from './elements/TopBar';
 import Menu from './elements/Menu';
 
+import categoriesData from 'src/data/categories';
 import data from 'src/data/menu';
 
 const Header = () => {
@@ -17,7 +18,7 @@ const Header = () => {
     // Grabbing extra categories from WP and adding them to the menu data
     if (Object.keys(categories).length > 0 && !(menuData.length > data.length)) {
       const copy = [...menuData];
-      copy.unshift(...Object.keys(categories))
+      copy.unshift(...categoriesData)
       setMenuData(copy);
     }
   }, [categories, menuData]);
