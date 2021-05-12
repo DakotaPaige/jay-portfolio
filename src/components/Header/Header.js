@@ -39,6 +39,6 @@ const Header = () => {
   );
 };
 
-const Root = styled.div``;
+const Root = styled.header``;
 
 export default Header;

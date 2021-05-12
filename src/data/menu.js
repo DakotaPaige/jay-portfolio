@@ -8,7 +8,7 @@ export default [
     to: '/about',
   },
   {
-    text: 'Contact',
+    text: 'Contact & Services',
     to: '/contact',
   },
 ];
