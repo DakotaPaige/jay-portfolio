@@ -64,7 +64,7 @@ const Root = styled.div`
   @media ${media.desktop} {
     display: flex;
     justify-content: space-between;
-    padding-top: ${vwDesktop(60)};
+    padding-top: 0;
     h1 {
       margin-bottom: ${vwDesktop(20)};
     }

@@ -79,17 +79,20 @@ export default createGlobalStyle`
     }
   }
 
-  p, a {
+  p, a, li {
       font-family: ${theme.font.family};
       font-size: ${vw(14)};
+      letter-spacing: ${vw(0.5)};
       font-weight: 300;
       letter-spacing: normal;
       color: black;
       @media ${media.tablet} {
         font-size: ${vwTablet(16)};
+        letter-spacing: ${vwTablet(0.5)};
       }
       @media ${media.desktop} {
-        font-size: ${vwDesktop(16)};
+        font-size: ${vwDesktop(18)};
+        letter-spacing: ${vwDesktop(0.5)};
       }
     &.disclaimer {
       font-family: ${theme.font.family};
@@ -103,6 +106,55 @@ export default createGlobalStyle`
       @media ${media.desktop} {
         font-size: ${vwDesktop(11)};
       }
+    }
+  }
+
+  .button {
+    font-family: ${theme.font.family};
+    font-size: ${vw(14)};
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: ${vw(2)};
+    text-transform: uppercase;
+    @media ${media.tablet} {
+      font-size: ${vwTablet(16)};
+      letter-spacing: ${vwTablet(2)};
+    }
+    @media ${media.desktop} {
+      font-size: ${vwDesktop(18)};
+      letter-spacing: ${vwDesktop(2)};
+    }
+  }
+
+  .form-label {
+    font-family: ${theme.font.family};
+    font-size: ${vw(14)};
+    line-height: normal;
+    font-weight: normal;
+    letter-spacing: ${vw(0.5)};
+    @media ${media.tablet} {
+      font-size: ${vwTablet(16)};
+      letter-spacing: ${vwTablet(0.5)};
+    }
+    @media ${media.desktop} {
+      font-size: ${vwDesktop(18)};
+      letter-spacing: ${vwDesktop(0.5)};
+    }
+  }
+
+  .form-input {
+    font-family: ${theme.font.family};
+    font-size: ${vw(14)};
+    line-height: normal;
+    font-weight: normal;
+    letter-spacing: ${vw(0.7)};
+    @media ${media.tablet} {
+      font-size: ${vwTablet(16)};
+      letter-spacing: ${vwTablet(0.9)};
+    }
+    @media ${media.desktop} {
+      font-size: ${vwDesktop(18)};
+      letter-spacing: ${vwDesktop(1.2)};
     }
   }
 `;

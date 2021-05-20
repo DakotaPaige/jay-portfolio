@@ -80,6 +80,7 @@ const Wrapper = styled.div`
         top: ${`calc(100% + ${vwDesktop(2)})`};
         background-color: black;
         transform: scaleX(0);
+        transform-origin: left;
         transition: 0.4s ease;
       }
       &:hover::after {
