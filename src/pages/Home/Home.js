@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux';
 
 import Page from 'components/Page';
 import Gallery from 'components/Gallery/Gallery';
+import Intro from './sections/Intro';
 
 // https://jaypegsphoto.ca/wp/wp-json/wp/v2/photos?_embed
 
@@ -13,6 +14,7 @@ const Home = () => {
   return (
     <Page>
       <Root>
+        <Intro />
         {Object.keys(photos).length > 0 && (
           <Gallery data={photos['featured']} />
         )}

@@ -9,7 +9,10 @@ const Loading = (props) => {
   const { isLoading } = props;
   return (
     <Root style={{ opacity: isLoading ? 1 : 0 }}>
-      <img src={require('src/assets/images/icons/ajax-loader.gif')} alt="Loading..." />
+      <img
+        src={require('src/assets/images/icons/ajax-loader.gif')}
+        alt="Loading..."
+      />
     </Root>
   );
 };
@@ -20,7 +23,7 @@ Loading.propTypes = {
 
 const Root = styled.div`
   width: 100%;
-  height: 60vh;
+  height: ${`calc(100% - ${vw(60)})`};
   display: flex;
   align-items: center;
   justify-content: center;
@@ -28,7 +31,7 @@ const Root = styled.div`
   top: ${vw(60)};
   left: 0;
   pointer-events: none;
-  background-color: ${({theme}) => theme.color.lightGrey};
+  background-color: ${({ theme }) => theme.color.lightGrey};
   transition: 0.4s ease;
   z-index: 999;
   img {
@@ -37,12 +40,14 @@ const Root = styled.div`
   }
   @media ${media.tablet} {
     top: ${vwTablet(80)};
+    height: ${`calc(100% - ${vwTablet(80)})`};
     img {
       width: ${vwTablet(40)};
     }
   }
   @media ${media.desktop} {
     top: ${vwDesktop(80)};
+    height: ${`calc(100% - ${vwDesktop(80)})`};
     img {
       width: ${vwDesktop(40)};
     }
